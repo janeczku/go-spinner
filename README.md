@@ -6,7 +6,7 @@ Useful when you want your users to know that there is activity and that the prog
 * The whole spinner line is completely cleared from the console once it is stopped.
 * Spinner automagically hides itself if you have piped stdout to somewhere else than the console (You don't really want a spinner in your logger, do you?).    
  
-[![asciicast](https://asciinema.org/a/20208.png)](https://asciinema.org/a/20208)
+![asciicast](http://g.recordit.co/tPXhorn2n7.gif)
 
 ### Installation
 
