@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	// 100ms per frame
+	// 150ms per frame
 	DEFAULT_FRAME_RATE = time.Millisecond * 150
 )
 
@@ -74,9 +74,7 @@ func (sp *Spinner) Stop() {
 	//prevent multiple calls
 	sp.stopOnce.Do(func() {
 		close(sp.runChan)
-		if !sp.NoTty {
-			sp.clearLine()
-		}
+		sp.clearLine()
 	})
 }
 
