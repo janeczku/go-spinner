@@ -7,9 +7,8 @@ Useful when you want your users to know that there is activity and that the prog
 * Spinner automagically hides itself if you have piped stdout to somewhere else than the console (You don't really want a spinner in your logger, do you?).    
  
 ### Installation
-Make sure you have a working Go environment (go 1.1+ is *required*). [See the install instructions](http://golang.org/doc/install.html).
 
-To install `cli.go`, simply run:
+To install `spinner.go`, simply run:
 ```
 $ go get github.com/janeczku/go-spinner
 ```
@@ -32,9 +31,7 @@ import (
 
 func main() {
 	s := spinner.StartNew("This may take some while...")
-
-    time.Sleep(3 * time.Second) // something more productive here
-    
+	time.Sleep(3 * time.Second) // something more productive here
 	s.Stop()
 }
 ```
@@ -43,11 +40,11 @@ func main() {
 
 **`s := spinner.StartNew(title string)`**
 
-Quickstart. Creates and starts a new spinner with default options. 
+Quickstart. Creates a new spinner with default options and start it. 
 
 **`s := spinner.NewSpinner(title string)`**
 
-Creates a new spinner object without starting it.
+Creates a new spinner object.
 
 **`s.SetSpeed(time.Millisecond)`**
 
@@ -64,4 +61,3 @@ Start printing out the spinner animation
 **`s.Stop()`**
 
 Stops the spinner and clears the line.
-
