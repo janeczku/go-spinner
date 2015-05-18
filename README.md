@@ -3,9 +3,11 @@
 This is a simple spinner / activity indicator for Go command line apps.
 Useful when you want your users to know that there is activity and that the program isn't hung.    
 #### Special perks
-* Spinner is cleared from the console when stopped and the line reset.
+* The whole spinner line is completely cleared from the console once it is stopped.
 * Spinner automagically hides itself if you have piped stdout to somewhere else than the console (You don't really want a spinner in your logger, do you?).    
  
+[![asciicast](https://asciinema.org/a/20208.png)](https://asciinema.org/a/20208)
+
 ### Installation
 
 To install `spinner.go`, simply run:
@@ -38,26 +40,32 @@ func main() {
 
 ### API
 
-**`s := spinner.StartNew(title string)`**
-
+``` go
+s := spinner.StartNew(title string)
+```
 Quickstart. Creates a new spinner with default options and start it. 
 
-**`s := spinner.NewSpinner(title string)`**
-
+``` go
+s := spinner.NewSpinner(title string)
+```
 Creates a new spinner object.
 
-**`s.SetSpeed(time.Millisecond)`**
-
+``` go
+s.SetSpeed(time.Millisecond)
+```
 Sets a custom speed for the spinner animation (default 150ms/frame).
 
-**`s.SetCharset([]string)`**
-
+``` go
+s.SetCharset([]string)
+```
 If you don't like the spinning stick, give it an Array of strings like `{".", "o", "0", "@", "*"}`.
 
-**`s.Start()`**
-
+``` go
+s.Start()
+```
 Start printing out the spinner animation
 
-**`s.Stop()`**
-
+``` go
+s.Stop()
+```
 Stops the spinner and clears the line.
