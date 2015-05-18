@@ -1,10 +1,11 @@
 ## Simple CLI Spinner for Go
 
 This is a simple spinner / activity indicator for Go command line apps.
-Useful when you want your users to know that there is activity and that the program isn't hung.    
-#### Special perks
-* The whole spinner line is completely cleared from the console once it is stopped.
-* Spinner automagically hides itself if you have piped stdout to somewhere else than the console (You don't really want a spinner in your logger, do you?).    
+Useful when you want your users to know that there is activity and that the program isn't hung.      
+    
+**Special perks**
+- [x] The spinner line is completely cleared from the console once it is stopped.
+- [x] Spinner automagically hides itself if you have piped stdout to somewhere else than the console (You don't really want a spinner in your logger, do you?). 
  
 ![asciicast](http://g.recordit.co/tPXhorn2n7.gif)
 
