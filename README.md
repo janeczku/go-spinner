@@ -41,22 +41,22 @@ func main() {
 ``` go
 s := spinner.StartNew(title string)
 ```
-Quickstart. Creates a new spinner with default options and start it. 
+Quickstart. Creates a new spinner with default options and start it
 
 ``` go
 s := spinner.NewSpinner(title string)
 ```
-Creates a new spinner object.
+Creates a new spinner object
 
 ``` go
 s.SetSpeed(time.Millisecond)
 ```
-Sets a custom speed for the spinner animation (default 150ms/frame).
+Sets a custom speed for the spinner animation (default 150ms/frame)
 
 ``` go
 s.SetCharset([]string)
 ```
-If you don't like the spinning stick, give it an Array of strings like `{".", "o", "0", "@", "*"}`.
+If you don't like the spinning stick, give it an Array of strings like `{".", "o", "0", "@", "*"}`
 
 ``` go
 s.Start()
@@ -66,4 +66,4 @@ Start printing out the spinner animation
 ``` go
 s.Stop()
 ```
-Stops the spinner and clears the line.
+Stops the spinner
