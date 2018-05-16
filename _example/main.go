@@ -57,7 +57,7 @@ func main() {
 	s.Start()
 	s.SetSpeed(100 * time.Millisecond)
 	time.Sleep(3 * time.Second)
-	s.Error("Task 5: I am an error message!")
+	s.Error("Task 6: I am an error message!")
 
 	fmt.Println("All Done!")
 }
