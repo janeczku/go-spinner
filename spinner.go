@@ -78,6 +78,36 @@ func (sp *Spinner) Stop() {
 	})
 }
 
+// Success - Print a message on success
+// Uses Title if no message given
+func (sp *Spinner) Success(msg ...string) {
+	message := sp.Title
+	if len(msg) > 0 {
+		message = msg[0]
+	}
+	//prevent multiple calls
+	sp.stopOnce.Do(func() {
+		close(sp.runChan)
+		sp.clearLine()
+		fmt.Printf("✓ %s\n", message)
+	})
+}
+
+// Error - Print the error message
+// Uses Title if no message given
+func (sp *Spinner) Error(msg ...string) {
+	message := sp.Title
+	if len(msg) > 0 {
+		message = msg[0]
+	}
+	//prevent multiple calls
+	sp.stopOnce.Do(func() {
+		close(sp.runChan)
+		sp.clearLine()
+		fmt.Printf("✗ %s\n", message)
+	})
+}
+
 // spinner animation
 func (sp *Spinner) animate() {
 	var out string
