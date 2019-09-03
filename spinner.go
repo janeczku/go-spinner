@@ -36,7 +36,9 @@ func NewSpinner(title string) *Spinner {
 		FrameRate: DEFAULT_FRAME_RATE,
 		runChan:   make(chan struct{}),
 	}
-	if !terminal.IsTerminal(syscall.Stdout) {
+	var stdout interface{} = syscall.Stdout
+	stdoutFD, ok := stdout.(int)
+	if !(ok && terminal.IsTerminal(stdoutFD)) {
 		sp.NoTty = true
 	}
 	return sp
