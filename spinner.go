@@ -82,17 +82,20 @@ func (sp *Spinner) Stop() {
 func (sp *Spinner) animate() {
 	var out string
 	for i := 0; i < len(sp.Charset); i++ {
-		out = sp.Charset[i] + " " + sp.Title
-		switch {
-		case sp.Output != nil:
-			fmt.Fprint(sp.Output, out)
-			//fmt.Fprint(sp.Output, "\r"+out)
-		case !sp.NoTty:
-			fmt.Print(out)
-			//fmt.Print("\r" + out)
+		select {
+		case <-sp.runChan:
+			return
+		default:
+			out = sp.Charset[i] + " " + sp.Title
+			switch {
+			case sp.Output != nil:
+				fmt.Fprint(sp.Output, out)
+			case !sp.NoTty:
+				fmt.Print(out)
+			}
+			time.Sleep(sp.FrameRate)
+			sp.clearLine()
 		}
-		time.Sleep(sp.FrameRate)
-		sp.clearLine()
 	}
 }
 
