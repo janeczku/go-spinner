@@ -1,4 +1,4 @@
-module go-spinner
+module github.com/janeczku/go-spinner
 
 go 1.15
 
