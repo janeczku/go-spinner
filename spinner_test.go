@@ -2,7 +2,7 @@ package spinner_test
 
 import (
 	"bytes"
-	spinner "go-spinner"
+	spinner "github.com/elisarver/go-spinner"
 	"testing"
 	"time"
 )
